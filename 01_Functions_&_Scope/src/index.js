@@ -68,3 +68,82 @@ const inventory = [
 
         }
     ]
+
+const book = {
+    id:1,
+    title: 'Eloquent JavaScript: A Modern Introduction to Programming',
+    author: 'Marjin Haverbeke',
+    price: 10.00,
+    reviews: [{userID: 1, content:'Good book, but not great for new coders'}],
+    inventory: 10,
+    imageUrl: 'https://images-na.ssl-images-amazon.com/images/I/51IKycqTPUL._SX218_BO1,204,203,200_QL40_FMwebp_.jpg',
+    
+}
+
+//Function Declaration 
+
+// function helloWorld(){
+//     return 'rose is cute'
+// }
+
+// console.log(helloWorld())
+console.log(priceFormatter(book))
+function priceFormatter(book){
+    return '$' + book.price.toFixed(2)
+}
+
+//Function Expression 
+//console.log(titleAndAuthor(book))
+const titleAndAuthor = function(book){
+    return `Title: ${book.title} by ${book.author}`
+}
+
+//Arrow function 
+// const printSale = (book) => {
+//     return `${book.title} by ${book.author} is on Sale!`
+// }
+
+const printSale = book => `${book.title} by ${book.author} is on Sale!`
+const discountPrice = (discount, book) => Math.floor(book.price/discount)
+
+
+//Scope
+//Global
+let newTitle = 'The JavaScript Cookbook'
+console.log('Global', newTitle)
+
+function buildBook(price, author, imageUrl ){
+    console.log('function', newTitle)
+    const bookObj = {}
+    bookObj.title = newTitle
+    bookObj.price = price
+    bookObj.author = author
+    bookObj.inventory = 0
+
+    if(!imageUrl){
+    //Block scope
+        const defaultImage = 'placeHolderImage.jpg'
+        bookObj.imageUrl = defaultImage
+    } else {
+        console.log(defaultImage)
+        bookObj.imageUrl = imageUrl
+    }
+
+    return bookObj
+}
+
+const newBook = buildBook(5, 'Shelly Powers', false)
+inventory.push(newBook)
+
+//Callbacks
+function mapOverArray(array, cb){
+    const newArray = []
+    for(let item of array ){
+        newArray.push(cb(item))
+    }
+    return newArray
+}
+
+console.log(mapOverArray(inventory,printSale))
+console.log(mapOverArray(inventory,titleAndAuthor))
+console.log(mapOverArray(inventory, priceFormatter))
