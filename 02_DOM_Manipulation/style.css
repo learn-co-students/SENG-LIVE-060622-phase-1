@@ -49,3 +49,7 @@ footer div p{
 }
 
 
+footer{
+    display: flex;
+    flex-direction: column;
+}
