@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="style.css">
 
     <!-- Data file -->
-    <script defer src="src/data.js"></script>
+    <script  src="src/data.js"></script>
     <!-- JavaScript file -->
     <!-- defer - this file will load after the DOM loads -->
     <script defer src="src/index.js"></script>
@@ -42,11 +42,19 @@
           
             <label for="inventory">Inventory:</label>
             <input type="text" id="inventory" name="inventory">
+
+            <!-- <select name="cars" id="cars">
+              <option value="volvo">Volvo</option>
+              <option value="saab">Saab</option>
+              <option value="mercedes">Mercedes</option>
+              <option value="audi">Audi</option>
+            </select> -->
               
             <input type="submit" value="ADD BOOK"/>
           </form>
       </div>
         <div class="list">
+          <button id="delete-books">Delete All Books</button>
           <ul id="book-list">
           </ul>
         </div>
