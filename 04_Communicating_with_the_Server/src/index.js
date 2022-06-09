@@ -1,5 +1,42 @@
 document.addEventListener('DOMContentLoaded', () => {
 
+// //FETCH
+// //Fetch all
+//.then(function(book){
+//   book.forEach(renderBookCard))
+// })
+
+// function resFoo(res){
+//     return res.json()
+// }
+
+fetch('http://localhost:3000/books')
+.then(res => res.json())
+.then(book => book.forEach(renderBookCard))
+.catch(error =>console.error(error))  
+// Fetch one
+fetch('http://localhost:3000/stores/1')
+.then(res => res.json())
+.then(data => {
+    renderHeader(data)
+    renderFooter(data)
+})
+.catch(error => console.log(error))  
+//     function fetchData(url){
+//         return fetch(url)
+//         .then(res => res.json())
+//     }
+// //STOP
+//     fetchData('http://localhost:3000/books')
+//     .then(book => book.forEach(renderBookCard))
+
+//     fetchData('http://localhost:3000/stores/1')
+//     .then(data => {
+//     renderHeader(data)
+//     renderFooter(data)
+//     })
+
+//STOP
 // Render Functions
     // Renders Header
     function renderHeader(store){
@@ -52,10 +89,10 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
 //Invoking functions
-    renderHeader(bookStore)
-    renderFooter(bookStore)
-    bookStore.inventory.forEach(renderBookCard)
+
     document.querySelector('#book-form').addEventListener('submit', handleForm)
 
+///////
 
 })
+
