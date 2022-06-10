@@ -42,6 +42,12 @@ document.addEventListener('DOMContentLoaded', () => {
         document.querySelector('#book-list').append(li)
     }
 
+    function handleError(){
+        const h1 = document.createElement('h1')
+        h1.textContent = 'Sorry! There was a problem please check back soon!'
+        document.querySelector('main').append(h1)
+    }
+
 // Event Handlers
     function handleForm(e){
         e.preventDefault()
@@ -64,11 +70,17 @@ document.addEventListener('DOMContentLoaded', () => {
         renderHeader(store)
         renderFooter(store)
     })
-    .catch(e => console.error(e))
+    .catch(e => {
+        handleError()
+        console.error(e)
+    })
 
     fetchResource('http://localhost:3000/books')
     .then(books => books.forEach(renderBookCard))
-    .catch(e => console.error(e))
+    .catch(e => {
+        handleError()
+        console.error(e)
+    })
 
     document.querySelector('#book-form').addEventListener('submit', handleForm)
 
