@@ -1,9 +1,22 @@
+//Global
+const cat = 'rose'
 document.addEventListener('DOMContentLoaded', () => {
-
+    //Function - local scope
 // Fetch requests 
     // Function for making a GET request 
     function fetchResource(url){
         return fetch(url)
+        .then(res => res.json())
+    }
+
+    function createResource(url, body){
+        return fetch(url,{
+            method: 'POST',
+            headers: {
+                'Content-Type':'application/json'
+            },
+            body: JSON.stringify(body)
+        })
         .then(res => res.json())
     }
 // Rendering functions
@@ -60,7 +73,37 @@ document.addEventListener('DOMContentLoaded', () => {
             inventory:e.target.inventory.value,
             reviews:[]
         }
-        renderBookCard(book)
+        //renderBookCard(book)
+        createResource('http://localhost:3000/books',book)
+        .then(data => renderBookCard(data))
+        .catch(e => console.log(e))
+    }
+
+    function handleStore(event){
+        event.preventDefault()
+        const store = {
+            name: event.target.name.value,
+            location: event.target.location.value,
+            number: event.target.number.value,
+            address: event.target.address.value,
+            hours: event.target.hours.value
+        }
+        fetch('http://localhost:3000/stores',{
+            method: 'POST',
+            headers:{
+                'Content-Type':'application/json'
+            },
+            body: JSON.stringify(store)
+        })
+        .then(res => res.json())
+        .then(data => {
+            const h2 = document.createElement('h2')
+            h2.textContent = `${data.name} was saved!`
+            document.querySelector('main').append(data)
+    
+    })
+
+        //createResource('http://localhost:3000/stores', store)
     }
 
 
@@ -83,5 +126,31 @@ document.addEventListener('DOMContentLoaded', () => {
     })
 
     document.querySelector('#book-form').addEventListener('submit', handleForm)
+    document.querySelector('#store-form').addEventListener('submit', handleStore)
 
+    document.querySelector('#form-btn').addEventListener('click', () => {
+            document.querySelector('#store-form').classList.toggle('hidden')
+            document.querySelector('#book-form').classList.toggle('hidden')
+    })
 })
+
+// fetch('https://pokeapi.co/api/v2/pokemon/mew')
+// .then(res => res.json())
+// .then(pokemon => {
+    
+//     const div = document.createElement('div')
+//     const sprite = document.createElement('img')
+//     const h4 = document.createElement('h4')
+//     sprite.src = pokemon.sprites.front_default
+//     h4.textContent = `${pokemon.id} : ${pokemon.name}`
+
+//     const move = pokemon.moves.find(obj => obj.move.name === 'mega-punch')
+
+    
+//     div.append(h4, sprite)
+//     document.querySelector('footer').append(div)
+// })
+
+//Sprite pokemon.sprite
+//name  pokemon.name
+//number pokemon.id
