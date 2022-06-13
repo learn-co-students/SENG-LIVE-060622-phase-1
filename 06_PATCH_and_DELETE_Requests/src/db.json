@@ -37,7 +37,7 @@
           "content": "Good book, but not great for new coders"
         }
       ],
-      "inventory": "15",
+      "inventory": "12",
       "imageUrl": "https://images-na.ssl-images-amazon.com/images/I/51IKycqTPUL._SX218_BO1,204,203,200_QL40_FMwebp_.jpg"
     },
     {
@@ -51,7 +51,7 @@
           "content": "good way to learn JQuery"
         }
       ],
-      "inventory": 2,
+      "inventory": 1000,
       "imageUrl": "https://images-na.ssl-images-amazon.com/images/I/31SRWF+LkKL._SX398_BO1,204,203,200_.jpg"
     },
     {
@@ -135,6 +135,132 @@
       ],
       "inventory": 20,
       "imageUrl": "https://images-na.ssl-images-amazon.com/images/I/41oYsXjLvZL._SY344_BO1,204,203,200_.jpg"
+    },
+    {
+      "title": "",
+      "author": "",
+      "price": "",
+      "imageUrl": "",
+      "inventory": "",
+      "reviews": [],
+      "id": 8
+    },
+    {
+      "title": "",
+      "author": "",
+      "price": "",
+      "imageUrl": "",
+      "inventory": "",
+      "reviews": [],
+      "id": 9
+    },
+    {
+      "title": "",
+      "author": "",
+      "price": "",
+      "imageUrl": "",
+      "inventory": "",
+      "reviews": [],
+      "id": 10
+    },
+    {
+      "title": "",
+      "author": "",
+      "price": "",
+      "imageUrl": "",
+      "inventory": "",
+      "reviews": [],
+      "id": 11
+    },
+    {
+      "title": "",
+      "author": "",
+      "price": "",
+      "imageUrl": "",
+      "inventory": "",
+      "reviews": [],
+      "id": 12
+    },
+    {
+      "title": "",
+      "author": "",
+      "price": "",
+      "imageUrl": "",
+      "inventory": "",
+      "reviews": [],
+      "id": 13
+    },
+    {
+      "title": "",
+      "author": "",
+      "price": "",
+      "imageUrl": "",
+      "inventory": "",
+      "reviews": [],
+      "id": 14
+    },
+    {
+      "title": "",
+      "author": "",
+      "price": "",
+      "imageUrl": "",
+      "inventory": "",
+      "reviews": [],
+      "id": 15
+    },
+    {
+      "title": "",
+      "author": "",
+      "price": "",
+      "imageUrl": "",
+      "inventory": "",
+      "reviews": [],
+      "id": 16
+    },
+    {
+      "title": "",
+      "author": "",
+      "price": "",
+      "imageUrl": "",
+      "inventory": "",
+      "reviews": [],
+      "id": 17
+    },
+    {
+      "title": "",
+      "author": "",
+      "price": "",
+      "imageUrl": "",
+      "inventory": "",
+      "reviews": [],
+      "id": 18
+    },
+    {
+      "title": "",
+      "author": "",
+      "price": "",
+      "imageUrl": "",
+      "inventory": "",
+      "reviews": [],
+      "id": 19
+    },
+    {
+      "title": "",
+      "author": "",
+      "price": "",
+      "imageUrl": "",
+      "inventory": "",
+      "reviews": [],
+      "id": 20
+    },
+    {
+      "title": "",
+      "author": "",
+      "price": "",
+      "imageUrl": "",
+      "inventory": "",
+      "reviews": [],
+      "id": 21
     }
   ]
 }
