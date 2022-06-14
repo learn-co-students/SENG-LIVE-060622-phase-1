@@ -1,3 +1,4 @@
+console.log(apiKEY)
 document.addEventListener('DOMContentLoaded', () => {
     // Fetch requests 
         // Function for making a GET request 
