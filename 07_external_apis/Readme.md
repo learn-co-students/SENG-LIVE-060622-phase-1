@@ -19,5 +19,9 @@
         - URL: `https://www.googleapis.com/books/v1/volumes?q=${search}&key=api_key_here`
         - Review Query parameters. Here we are using q and key as prams
         - NOTE: DO NOT PUSH YOUR API KEY UP TO GITHUB; IT CAN BE STOLEN AND USED MALICIOUSLY 
+            - Protect your keys but creating a .gitignore in the root directory 
+            - create a keys.js to store your keys in and add a script file to index.html to load the keys 
+            - add the file path to the .gitignore this will keep the file from being pushed to github. 
+            - .env and Netlify both have alternatives for protecting your keys if you intend to host the project. 
         - Render the google books data to the DOM
         
